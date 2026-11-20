@@ -8,22 +8,23 @@
   * { box-sizing: border-box; }
   html, body { margin: 0; width: 1024px; height: 1024px; }
   body { background: #f5f2e9; color: #1d2422; font-family: Helvetica, Arial, sans-serif; font-variant-numeric: tabular-nums; }
-  .page { width: 1024px; height: 1024px; padding: 32px 40px 24px; display: flex; flex-direction: column; }
-  .masthead { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 3px solid #1d2422; padding-bottom: 16px; }
+  .page { width: 1024px; height: 1024px; padding: 24px 32px 16px; display: flex; flex-direction: column; }
+  .masthead { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 3px solid #1d2422; padding-bottom: 12px; }
   .name { margin: 0; font: bold 29px/1 Georgia, 'Times New Roman', serif; letter-spacing: -0.6px; }
   .date { margin: 0; font-size: 14px; font-weight: bold; white-space: nowrap; }
-  .lead { padding: 24px 0 24px; border-bottom: 1px solid #1d2422; }
-  .kicker { margin: 0; color: #a13d2d; font-size: 13px; line-height: 16px; font-weight: bold; letter-spacing: 1.1px; }
-  h1 { max-width: 920px; margin: 16px 0; font: bold 68px/1.03 Georgia, 'Times New Roman', serif; letter-spacing: -2.5px; }
-  .deck { max-width: 820px; margin: 0; font: 22px/1.3 Georgia, 'Times New Roman', serif; }
-  .grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 1fr); flex: 1; border-bottom: 3px solid #1d2422; }
-  .story { padding: 16px 16px 12px; border-left: 1px solid #a9aaa2; }
-  .story:nth-child(4n + 1) { border-left: 0; padding-left: 0; }
-  .story:nth-child(4n) { padding-right: 0; }
-  .story:nth-child(n + 5) { border-top: 1px solid #a9aaa2; }
-  .story h2 { margin: 8px 0 0; font: bold 20px/1.15 Georgia, 'Times New Roman', serif; letter-spacing: -0.25px; }
-  .story-deck { margin: 8px 0 0; color: #1d2422; opacity: 0.78; font: 15px/1.3 Georgia, 'Times New Roman', serif; }
-  footer { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-top: 16px; }
+  .lead { padding: 16px 0; border-bottom: 1px solid #1d2422; }
+  .lead-kicker, .kicker { margin: 0; color: #a13d2d; font-size: 13px; line-height: 15px; font-weight: bold; letter-spacing: 0.6px; }
+  h1 { margin: 8px 0; font: bold 48px/1.02 Georgia, 'Times New Roman', serif; letter-spacing: -1.5px; }
+  .deck { margin: 0; font: 17px/1.25 Georgia, 'Times New Roman', serif; }
+  .sections { flex: 1; display: flex; flex-direction: column; }
+  .section { flex: 1; display: flex; flex-direction: column; border-bottom: 1px solid #1d2422; }
+  .section-title { margin: 0; padding: 5px 0 4px; font-size: 13px; line-height: 15px; letter-spacing: 1.1px; }
+  .briefs { flex: 1; display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 1fr; }
+  .brief { padding: 3px 9px 4px; border-left: 1px solid #a9aaa2; }
+  .brief:nth-child(4n + 1) { border-left: 0; padding-left: 0; }
+  .brief:nth-child(4n) { padding-right: 0; }
+  .brief h3 { margin: 2px 0 0; font: bold 13px/1.15 Helvetica, Arial, sans-serif; letter-spacing: -0.2px; }
+  footer { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-top: 10px; }
   .footer-day { margin: 0; font: bold 15px/1.2 Georgia, 'Times New Roman', serif; white-space: nowrap; }
   .sources { margin: 0; font-size: 13px; line-height: 1.2; text-align: right; }
 </style>
@@ -32,23 +33,68 @@
 <main class="page">
   <header class="masthead">
     <p class="name">THE WORLD IN ONE FRAME</p>
-    <p class="date">Friday, 20 November 2026.</p>
+    <p class="date">Friday, 20 November 2026</p>
   </header>
   <section class="lead">
-    <p class="kicker">SHENZHEN SUMMIT</p>
+    <p class="lead-kicker">SHENZHEN SUMMIT</p>
     <h1>Trump meets Xi and Putin in China, then skips questions</h1>
     <p class="deck">A rare trilateral sitting ends without a press conference; Washington calls it a new way of talking to rivals.</p>
   </section>
-  <section class="grid" aria-label="More news">
-    <article class="story"><p class="kicker">UKRAINE</p><h2>Three Kyiv bridges hit in a major Russian missile attack</h2><p class="story-deck">Strikes on three bridges cut power and water as winter closes in on the capital.</p></article>
-    <article class="story"><p class="kicker">NATO</p><h2>A Russian missile strikes Poland, Tusk says, as allies drill</h2><p class="story-deck">Warsaw says a missile fell on Polish soil during a major allied exercise.</p></article>
-    <article class="story"><p class="kicker">JUSTICE</p><h2>UN court finds Myanmar guilty of genocide, citing Facebook posts</h2><p class="story-deck">The first ruling to weigh a platform's own posts as evidence of intent.</p></article>
-    <article class="story"><p class="kicker">EUROPE</p><h2>Britain and the EU hold a rare summit to strengthen ties</h2><p class="story-deck">A post-Brexit reset on trade, defence and student exchange.</p></article>
-    <article class="story"><p class="kicker">WASHINGTON</p><h2>Senate passes a bipartisan energy bill for data centres</h2><p class="story-deck">The bill speeds grid connections for data centres; an Iran war-funds vote fails.</p></article>
-    <article class="story"><p class="kicker">MARKETS</p><h2>Anthropic's debut drags Seoul shares lower; California subpoenas Nvidia</h2><p class="story-deck">AI valuations wobble as Seoul opens sharply lower; California probes Huang's China ties.</p></article>
-    <article class="story"><p class="kicker">CLIMATE</p><h2>Outcry as fossil fuels are scrubbed from a draft UN deal</h2><p class="story-deck">Negotiators dropped the words fossil fuels from the draft, drawing an outcry.</p></article>
-    <article class="story"><p class="kicker">AMERICAS</p><h2>Bukele seeks a third term; Colombia's tax protests swell</h2><p class="story-deck">A constitutional change clears the way; Bogota sees thousands march over tax plans.</p></article>
-  </section>
+  <div class="sections">
+    <section class="section">
+      <h2 class="section-title">EUROPE AND WAR</h2>
+      <div class="briefs">
+        <article class="brief"><p class="kicker">UKRAINE</p><h3>Three Kyiv bridges hit in a major Russian missile attack</h3></article>
+        <article class="brief"><p class="kicker">POLAND</p><h3>Tusk says a Russian missile struck Polish soil during allied drills</h3></article>
+        <article class="brief"><p class="kicker">KYIV</p><h3>Kushner says Trump is open to NATO-like security guarantees for Ukraine</h3></article>
+        <article class="brief"><p class="kicker">BRITAIN</p><h3>Britain and the EU hold a rare summit to reset trade and defence</h3></article>
+        <article class="brief"><p class="kicker">BRITAIN</p><h3>Two charged over the RAF Fairford plot will face trial next November</h3></article>
+        <article class="brief"><p class="kicker">ITALY</p><h3>A general strike pulls workers and students into nationwide protests</h3></article>
+      </div>
+    </section>
+    <section class="section">
+      <h2 class="section-title">THE UNITED STATES</h2>
+      <div class="briefs">
+        <article class="brief"><p class="kicker">WASHINGTON</p><h3>Senate passes a bipartisan energy bill to speed data-centre grids</h3></article>
+        <article class="brief"><p class="kicker">WASHINGTON</p><h3>Senate rejects a war powers resolution to limit strikes on Iran</h3></article>
+        <article class="brief"><p class="kicker">WASHINGTON</p><h3>The White House fires its national cyber director over outages</h3></article>
+        <article class="brief"><p class="kicker">WASHINGTON</p><h3>Emails show allies pressing officials to pardon election deniers</h3></article>
+        <article class="brief"><p class="kicker">TEXAS</p><h3>A death-row execution takes more than an hour, drawing scrutiny</h3></article>
+        <article class="brief"><p class="kicker">CALIFORNIA</p><h3>Coastal towns on alert as the biggest waves in years arrive</h3></article>
+        <article class="brief"><p class="kicker">IOWA</p><h3>The Army delays a lead azide detonation at a depot</h3></article>
+      </div>
+    </section>
+    <section class="section">
+      <h2 class="section-title">ASIA</h2>
+      <div class="briefs">
+        <article class="brief"><p class="kicker">MYANMAR</p><h3>UN court finds Myanmar guilty of genocide, citing Facebook posts</h3></article>
+        <article class="brief"><p class="kicker">SEOUL</p><h3>Heavy snow alerts disrupt transport across South Korea</h3></article>
+        <article class="brief"><p class="kicker">BEIJING</p><h3>Regulators move against market rumours that could roil stocks</h3></article>
+        <article class="brief"><p class="kicker">BEIJING</p><h3>Young red-chip firms face a ban on listing outside the mainland</h3></article>
+        <article class="brief"><p class="kicker">SHANGHAI</p><h3>Financial Street Securities says its chairman is detained</h3></article>
+        <article class="brief"><p class="kicker">TOKYO</p><h3>Saudis and Japan agree a deal to replenish depleted oil stockpiles</h3></article>
+        <article class="brief"><p class="kicker">JAKARTA</p><h3>Prabowo and Xi discuss South China Sea cooperation</h3></article>
+      </div>
+    </section>
+    <section class="section">
+      <h2 class="section-title">MONEY</h2>
+      <div class="briefs">
+        <article class="brief"><p class="kicker">SEOUL</p><h3>Shares open sharply lower after Anthropic's market debut</h3></article>
+        <article class="brief"><p class="kicker">SILICON VALLEY</p><h3>California subpoenas Nvidia over Huang's China ties</h3></article>
+        <article class="brief"><p class="kicker">GLOBAL</p><h3>Outages across email, travel, banking and cloud disrupt a working day</h3></article>
+      </div>
+    </section>
+    <section class="section">
+      <h2 class="section-title">THE WORLD</h2>
+      <div class="briefs">
+        <article class="brief"><p class="kicker">CLIMATE</p><h3>Outcry as fossil fuels are scrubbed from a draft UN deal</h3></article>
+        <article class="brief"><p class="kicker">BRAZIL</p><h3>Lula visits an ailing Chief Raoni as Indigenous land is recognised</h3></article>
+        <article class="brief"><p class="kicker">VENEZUELA</p><h3>Washington weighs the UAE's two quiet bases in Somalia</h3></article>
+        <article class="brief"><p class="kicker">EL SALVADOR</p><h3>Bukele seeks a third term after a constitutional change</h3></article>
+        <article class="brief"><p class="kicker">COLOMBIA</p><h3>Thousands march against the government's tax plans</h3></article>
+      </div>
+    </section>
+  </div>
   <footer>
     <p class="footer-day">One image, one day. 20 November 2026.</p>
     <p class="sources">Sources: BBC, NPR, The Guardian, Al Jazeera, France 24, SCMP, NYT, The Verge, TechCrunch.</p>
